@@ -1,12 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React, { Component } from 'react';
+import MainContainer from './containers/mainContainer.js'
 import '../style.scss'
-const App = () => {
-    return (
-        <div className="container">
-            <p>React HereRLo</p>
-        </div>
-    )
+import DevTools from '../DevTools'
+
+class App extends Component {
+    render () {
+        return (
+            <div>
+                <DevTools />
+                <MainContainer />
+            </div>
+        )
+    }
 }
 
 export default App;

@@ -21,6 +21,8 @@ function comments(state = [], action) {
                 return comment
             });
         default:
-            return state;    
+            return state;
     }
 }
+
+export default comments
