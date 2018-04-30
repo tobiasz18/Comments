@@ -28,7 +28,7 @@ export function thumbUp(id) {
     }
 }
 
-export function ThumbDown(id) {
+export function thumbDown(id) {
     return {
         type: THUMB_DOWN,
         id

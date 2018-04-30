@@ -4,8 +4,10 @@ import { addComment, removeComment, thumbUp, thumbDown } from '../../actions/com
 import { addUser, removeUser} from '../../actions/users.js';
 import Comment from '../presentation/Comment.js';
 
+
 const mapStateToProps = state => ({
-    comments: state.comments
+    comments: state.comments,
+    users: state.users
 });
 
 

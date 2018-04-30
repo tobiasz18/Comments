@@ -8,8 +8,6 @@ function comments(state = [], action) {
                 id: action.id,
                 votes: action.votes
             }, ...state];
-        case REMOVE_COMMENT:
-            return state.filter(comment => comment.id !== action.id);
         case THUMB_UP:
             return state.map(comment => {
                 comment.id === action.id ? comment.votes++ : comment
@@ -20,6 +18,8 @@ function comments(state = [], action) {
                 comment.id === action.id ? comment.votes-- : comment
                 return comment
             });
+        case REMOVE_COMMENT:
+            return state.filter(comment => comment.id !== action.id);
         default:
             return state;
     }

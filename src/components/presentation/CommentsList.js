@@ -3,16 +3,10 @@ import Comment from './Comment';
 import CommentContainer from '../containers/commentContainer.js';
 
 class CommentsList extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            comments: '',
-            users: ''
-        }
-    }
 
     handleAdduser = () => {
-        console.log('test', this.inputUser.value)
+        this.props.addUser(this.inputUser.value);
+        this.inputUser.value = ''
     }
 
     handleAddComment = () => {
@@ -23,13 +17,17 @@ class CommentsList extends Component {
     }
 
     render() {
+        const users = this.props.users.map(user => user.name);
+
         return(
             <div>
-                <input type="text" ref={(inputUser) => this.inputUser = inputUser}/>
-                <input type="text" ref={(input) => this.input = input}/>
+                <input type="text" ref={(inputUser) => this.inputUser = inputUser} placeholder="name" />
+                <textarea type="text" rows="4" cols="50" ref={(input) => this.input = input} placeholder="comment"/>
                 <button onClick={() => this.handleAddComment() }> Add </button>
                 {this.props.comments.map((item, index) =>
-                    <CommentContainer {...item} key={item.id} />)}
+                    <CommentContainer {...item} key={item.id} user={users[index]} />)
+                }
+
             </div>
         )
     }
