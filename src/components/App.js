@@ -7,8 +7,8 @@ class App extends Component {
     render () {
         return (
             <div>
-                <DevTools />
                 <MainContainer />
+                <DevTools />        
             </div>
         )
     }
