@@ -6,7 +6,7 @@ class CommentsList extends Component {
 
     handleAdduser = () => {
         this.props.addUser(this.inputUser.value);
-        this.inputUser.value = ''
+        this.inputUser.value = '';
     }
 
     handleAddComment = () => {
@@ -20,13 +20,23 @@ class CommentsList extends Component {
         const users = this.props.users.map(user => user.name);
 
         return(
-            <div>
-                <input type="text" ref={(inputUser) => this.inputUser = inputUser} placeholder="name" />
-                <textarea type="text" rows="4" cols="50" ref={(input) => this.input = input} placeholder="comment"/>
-                <button onClick={() => this.handleAddComment() }> Add </button>
-                {this.props.comments.map((item, index) =>
-                    <CommentContainer {...item} key={item.id} user={users[index]} />)
-                }
+            <div className="App_container">
+                <form>
+                    <div className="comment_container">
+                        <h2>Comments</h2>
+                        <label>
+                            <input type="text" ref={(inputUser) => this.inputUser = inputUser} placeholder="name" />
+                        </label>
+                        <label>
+                            <textarea type="text" rows="4" cols="50" ref={(input) => this.input = input} placeholder="comment" />
+                        </label>
+                        <label>
+                            <input type="button" onClick={() => this.handleAddComment() } value="Add comment" />
+                        </label>
+                    </div>
+                    {this.props.comments.map((item, index) =>
+                        <CommentContainer {...item} key={item.id} user={users[index]} />)}
+                </form>
 
             </div>
         )
