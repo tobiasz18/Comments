@@ -1,0 +1,63 @@
+
+main {
+    margin: 50px 0;
+    display: flex;
+    border: 1px solid;
+border-color: #393939;
+padding: 5px;
+
+    &:last-child {
+        line-height: 25px;
+
+    }
+
+    section {
+        display: inline-block;
+        margin-right: 0.5em;
+
+
+
+        article {
+            min-width: 480px;
+            max-width: 480px;
+
+            .user {
+                color: #E28525;
+                font-weight: bold;
+            }
+
+            .votes {
+                float: right;
+                margin-right: 5px;
+            }
+
+            .plusSpan {
+                float: right;
+                margin-right: 5px;
+                cursor: pointer;
+                img {
+                    border-color: #484848;
+                    width: 20px;
+                }
+            }
+
+            .minusSpan {
+                float: right;
+                cursor: pointer;
+                img {
+                    border-color: #484848;
+                    width: 20px;
+
+                }
+            }
+        }
+    }
+
+    button {
+        display: block;
+        color: #cccccc;
+        background: none;
+        border: 1px solid;
+        margin-left: 100%;
+    }
+}

@@ -10,15 +10,18 @@ class CommentsList extends Component {
     }
 
     handleAddComment = () => {
-        console.log('Click happened', this.input.value);
-        this.props.addComment(this.input.value);
-        this.input.value = '';
-        this.handleAdduser();
+        if(this.inputUser.value !== '' && this.input.value !== '') {
+            this.props.addComment(this.input.value);
+            this.input.value = '';
+            this.handleAdduser();
+        } else {
+            alert('empty field')
+        }
     }
 
     render() {
-        const users = this.props.users.map(user => user.name);
-
+        const users = this.props.users.map(user => user);
+        console.log('usesss', users)
         return(
             <div className="App_container">
                 <form>
@@ -34,10 +37,9 @@ class CommentsList extends Component {
                             <input type="button" onClick={() => this.handleAddComment() } value="Add comment" />
                         </label>
                     </div>
-                    {this.props.comments.map((item, index) =>
-                        <CommentContainer {...item} key={item.id} user={users[index]} />)}
                 </form>
-
+                {this.props.comments.map((item, index) =>
+                    <CommentContainer {...item} key={item.id} user={users[index]} />)}
             </div>
         )
     }

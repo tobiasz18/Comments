@@ -12,7 +12,13 @@ import App from './components/App.js';
 import DevTools from './DevTools'
 
 const store = createStore(reducer, DevTools.instrument());
-store.dispatch(addComment('Lorem Ipsum is simply dummy text of the printing and typesetting industry :))'));
+store.dispatch(addComment(`Lorem Ipsum is simply dummy text of the printing and typesetting industry :))
+Lorem Ipsum is simply dummy text of the printing and typesetting industry :))
+Lorem Ipsum is simply dummy text of the printing and typesetting industry :))
+Lorem Ipsum is simply dummy text of the printing and typesetting industry :))
+Lorem Ipsum is simply dummy text of the printing and typesetting industry :))
+
+`));
 store.dispatch(addUser('Tobi1512'));
 console.log(store.getState());
 

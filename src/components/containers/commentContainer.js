@@ -3,7 +3,7 @@ import { addComment, removeComment, thumbUp, thumbDown } from '../../actions/com
 import { addUser, removeUser} from '../../actions/users.js';
 import Comment from '../presentation/Comment.js';
 
-const mapPropsToState = dispatch => ({
+const mapDispatchToProps = dispatch => ({
     addComment: (text) => dispatch(addComment(text)),
     removeComment: (id) => dispatch(removeComment(id)),
     addUser: (name) => dispatch(addUser(name)),
@@ -12,4 +12,4 @@ const mapPropsToState = dispatch => ({
     thumbDown: (id) => dispatch(thumbDown(id))
 });
 
-export default connect(null, mapPropsToState)(Comment);
+export default connect(null, mapDispatchToProps)(Comment);

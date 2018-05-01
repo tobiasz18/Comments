@@ -18,7 +18,8 @@
             margin-bottom: 10px;
 
             &:last-child {
-                float: right;
+                display: flex;
+                justify-content: flex-end;
             }
 
             textarea {
