@@ -1,63 +1,67 @@
-
 main {
-    margin: 50px 0;
+    margin: 35px 0;
     display: flex;
-    border: 1px solid;
-border-color: #393939;
-padding: 5px;
+    padding: 5px;
 
     &:last-child {
         line-height: 25px;
-
     }
+}
 
-    section {
-        display: inline-block;
-        margin-right: 0.5em;
+section {
+    display: inline-block;
+    margin-right: 0.5em;
 
+    article {
+        @extend %border;
+        width: 480px;
+        color: $grey;
+        padding: 2px 10px;
+        background: #0b0b0b;
 
+        p {
+            color: $grey;
+            font-size: $font-size;
+        }
 
-        article {
-            min-width: 480px;
-            max-width: 480px;
+        .user {
+            color: #E28525;
+            font-weight: $font-weight;
+        }
 
-            .user {
-                color: #E28525;
-                font-weight: bold;
-            }
+        .votes {
+            @extend %float_right;
+        }
 
-            .votes {
-                float: right;
-                margin-right: 5px;
-            }
+        .plusSpan {
+            @extend %float_right;
+            cursor: $cursor;
 
-            .plusSpan {
-                float: right;
-                margin-right: 5px;
-                cursor: pointer;
-                img {
-                    border-color: #484848;
-                    width: 20px;
-                }
-            }
-
-            .minusSpan {
-                float: right;
-                cursor: pointer;
-                img {
-                    border-color: #484848;
-                    width: 20px;
-
-                }
+            img {
+                width: $thumbs_width;
             }
         }
-    }
 
-    button {
-        display: block;
-        color: #cccccc;
-        background: none;
-        border: 1px solid;
-        margin-left: 100%;
+        .minusSpan {
+            @extend %float_right;
+            cursor: $cursor;
+
+            img {
+                width: $thumbs_width;
+            }
+        }
+
+        button { //remove button
+            display: block;
+            color: #b40000;
+            background: none;
+            border: none;
+            font-weight: $font-weight;
+            margin-left: 88%;
+            cursor: $cursor;
+            &:hover {
+                color: #fe0000;
+            }
+        }
     }
 }

@@ -15,13 +15,12 @@ class CommentsList extends Component {
             this.input.value = '';
             this.handleAdduser();
         } else {
-            alert('empty field')
+            alert('empty field!')
         }
     }
 
     render() {
         const users = this.props.users.map(user => user);
-        console.log('usesss', users)
         return(
             <div className="App_container">
                 <form>
@@ -31,7 +30,7 @@ class CommentsList extends Component {
                             <input type="text" ref={(inputUser) => this.inputUser = inputUser} placeholder="name" />
                         </label>
                         <label>
-                            <textarea type="text" rows="4" cols="50" ref={(input) => this.input = input} placeholder="comment" />
+                            <textarea type="text" rows="5" cols="50" ref={(input) => this.input = input} placeholder="comment" />
                         </label>
                         <label>
                             <input type="button" onClick={() => this.handleAddComment() } value="Add comment" />

@@ -1,21 +1,47 @@
+$font-stack: Arial,Helvetica,sans-serif;
+$thumbs_width: 20px;
+$grey: #bbb;
+$cursor: pointer;
+$font-weight: font-weight;
+$font-size: 14px; //textarea inputUser p-tag
+
+%form-style { /*---textarea/input style---*/
+    background: #000000;
+    color: #cccccc;
+    padding: 4px;
+    border: solid 1px;
+    border-color: #7f7a7a;
+}
+
+%border {
+    border-radius: 5px;
+    border: solid 1px;
+    border-color: #121212;
+}
+
+%float_right {
+    float: right;
+    margin-right: 5px;
+}
+
 body {
-    background: #121212
+    background: #121212;
 }
 
 .App {
-    font-family: Arial,Helvetica,sans-serif;
+    font-family: $font-stack;
     width: 750px;
     background: #1e1e1e;
     margin: auto;
-    color: white;
     padding: 10px 0;
-    border: solid 1px;
-    border-radius: 4px;
-    border-color: #2f2d2d;
-    
+    @extend %border;
+
+
     a {
-        color: white;
-        font-size: 10px;
+        color: #ffffff;
+        font-size: $font-size;
         margin-left: 5px;
+        float: right;
+        margin-top: 15px;
     }
 }

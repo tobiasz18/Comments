@@ -3,43 +3,45 @@
     width: 630px;
     margin: auto;
     padding: 13px;
-    border: solid 1px;
-    border-radius: 4px;
-    border-color: #2f2d2d;
+    @extend %border;
+}
 
-    form {
-        h2 {
-            font-size: 16px;
-            color: white;
+form {
+    h2 {
+        font-size: 16px;
+        color: white;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 10px;
+
+        &:last-child {
+            display: flex;
+            justify-content: flex-end;
         }
 
-        label {
-            display: block;
-            margin-bottom: 10px;
+        textarea {
+            width: 100%;
+            @extend %form-style;
+            font-size: $font-size;
+        }
 
-            &:last-child {
-                display: flex;
-                justify-content: flex-end;
+        input { //submit input
+            &[type="text"] {
+                @extend %form-style;
+                cursor: $cursor;
+                font-size: $font-size;
             }
 
-            textarea {
-                width: 100%;
-                background: #000000;
-                color: #cccccc;
-                padding: 5px;
-                border: solid 1px;
-                border-color: #7f7a7a;
-
+            &[type="button"]{
+                border: 0;
+                border-radius: 4px;
+                outline: none;
+                background: $grey;
+                color: #24282a;
+                cursor: pointer;
             }
-
-            input {
-                background: #000000;
-                color: #cccccc;
-                border: solid 1px;
-                border-color: #7f7a7a;
-                padding: 5px;
-            }
-
         }
     }
 }

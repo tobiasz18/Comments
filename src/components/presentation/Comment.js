@@ -1,8 +1,6 @@
 import React from 'react';
 
-
 const Comment = ({text, votes, id, user, removeUser, removeComment, thumbUp, thumbDown}) => {
-    console.log({id})
     return (
         <main>
             <section className="image">
@@ -10,7 +8,6 @@ const Comment = ({text, votes, id, user, removeUser, removeComment, thumbUp, thu
             </section>
             <section>
                 <article>
-
                     <span className="user">{user.name}</span>
                     <span className="minusSpan" onClick={() => thumbDown(id)}>
                         <img src="https://png.icons8.com/color/50/000000/minus.png" />
@@ -22,12 +19,10 @@ const Comment = ({text, votes, id, user, removeUser, removeComment, thumbUp, thu
                 </article>
                 <article>
                     <p>{text}</p>
+                    <button onClick={() => removeComment(id)}>Remove</button>
                 </article>
-                <button onClick={() => removeComment(id)}>Remove</button>
             </section>
-
         </main>
-
     )
 }
 
