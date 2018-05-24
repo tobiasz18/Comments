@@ -1,4 +1,4 @@
-# Project Title
+# Redux - comments
 
 Adding comments with Redux-React
 
